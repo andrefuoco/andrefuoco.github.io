@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="Sito ufficiale di Andrea Capirchio - Musicista e Cantautore" />
-  <title>Andrea Capirchio | Musicista</title>
+  <meta name="description" content="ANDREFUOCO website" />
+  <title>ANDREFUOCO | Website</title>
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
   <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
@@ -16,20 +16,22 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <span class="d-block d-lg-none">Andrea Capirchio</span>
-      <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2"
-          src="assets/img/profile_music.jpg" alt="Foto profilo Andrea Capirchio" /></span>
+      <!-- LOGO: visibile su tutti i dispositivi -->
+      <span class="d-block text-center w-100">
+        <img class="img-fluid logo-img mx-auto mb-3" src="assets/img/logo_propic.png" alt="Andrefuoco Logo" />
+      </span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
-        class="navbar-toggler-icon"></span></button>
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#bio">Bio</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#music">Musica</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#music">Music</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#videos">Video</a></li>
         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#gallery">Foto</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Mailing List</a></li>
+        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#newsletter">Mailing List</a></li>
       </ul>
     </div>
   </nav>
@@ -38,11 +40,11 @@
   <div class="container-fluid p-0">
     
     <!-- Bio -->
-    <section class="resume-section" id="bio">
+    <section class="resume-section" id="about">
       <div class="resume-section-content">
-        <h1 class="mb-0">Andrea <span class="text-primary">Capirchio</span></h1>
-        <div class="subheading mb-5">Cantautore · Firenze, Italia · 
-          <a href="mailto:andrea.capirchio@gmail.com">andrea.capirchio@gmail.com</a>
+        <!-- Logo al posto del titolo -->
+        <div class="text-center mb-4">
+          <img src="assets/img/logo.png" alt="Andre Fuoco Logo" class="bio-logo img-fluid">
         </div>
         <p class="lead mb-5">
           Sono un musicista e cantautore di Firenze. La mia musica mescola sonorità acustiche e elettroniche,
@@ -92,23 +94,32 @@
     </section>
 
     <hr class="m-0" />
-
+    
     <!-- Gallery -->
     <section class="resume-section" id="gallery">
       <div class="resume-section-content">
-        <h2 class="mb-5">Galleria Fotografica</h2>
-        <div class="row">
-          <div class="col-md-4 mb-4"><img class="img-fluid rounded" src="assets/img/photo1.jpg" alt="Foto 1" /></div>
-          <div class="col-md-4 mb-4"><img class="img-fluid rounded" src="assets/img/photo2.jpg" alt="Foto 2" /></div>
-          <div class="col-md-4 mb-4"><img class="img-fluid rounded" src="assets/img/photo3.jpg" alt="Foto 3" /></div>
+        <h2 class="mb-5">Foto</h2>
+        <div class="photo-grid">
+          <img src="assets/img/andrefuoco_1.jpg" alt="Foto 1" data-index="0">
+          <img src="assets/img/andrefuoco_2.jpg" alt="Foto 2" data-index="1">
+          <img src="assets/img/andrefuoco_3.jpg" alt="Foto 3" data-index="2">
+          <img src="assets/img/andrefuoco_4.jpg" alt="Foto 4" data-index="3">
         </div>
       </div>
     </section>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <span class="prev">&#10094;</span>
+      <img class="lightbox-content" id="lightbox-img">
+      <span class="next">&#10095;</span>
+    </div>
+
     <hr class="m-0" />
 
     <!-- Mailing List -->
-    <section class="resume-section" id="contact">
+    <section class="resume-section" id="newsletter">
       <div class="resume-section-content">
         <h2 class="mb-5">Iscriviti alla mia Mailing List</h2>
         <p>Rimani aggiornato sui miei nuovi brani, concerti e video.</p>
