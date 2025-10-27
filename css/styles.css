@@ -11058,7 +11058,7 @@ p.lead {
 
 /* --- Logo nella sezione Bio --- */
 .bio-logo {
-  max-width: 280px;      /* dimensione principale del logo */
+  max-width: 480px;      /* dimensione principale del logo */
   height: auto;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -11072,6 +11072,46 @@ p.lead {
   opacity: 0.95;
 }
 
+/* --- Foto sotto il logo --- */
+.bio-photo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.bio-photo {
+  max-width: 600px;
+  width: 90%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.bio-photo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.bio-text {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #222;
+}
+
+.bio-text p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.bio-text strong {
+  color: #fc0000; 
+}
+
+.bio-text em {
+  font-style: italic;
+}
 
 section.resume-section {
   display: flex;
@@ -11084,6 +11124,19 @@ section.resume-section {
 }
 section.resume-section .resume-section-content {
   width: 100%;
+}
+
+
+/* --- Mobile responsiveness --- */
+@media (max-width: 768px) {
+  .bio-logo {
+    max-width: 200px;
+  }
+
+  .bio-photo {
+    max-width: 90%;
+    border-radius: 12px;
+  }
 }
 
 /* Mobile: logo più piccolo */
