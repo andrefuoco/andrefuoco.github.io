@@ -8,7 +8,6 @@
     position: fixed;
     width: 100%;
     height: auto;
-    background-color: rgba(0, 0, 0, 0.9);
     padding: 0.5rem 1rem;
     z-index: 1050;
   }
@@ -20,7 +19,6 @@
   }
 
   #sideNav .navbar-collapse {
-    background-color: rgba(0, 0, 0, 0.95);
     text-align: center;
     padding-bottom: 1rem;
   }
