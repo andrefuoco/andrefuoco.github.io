@@ -1,0 +1,107 @@
+/* =====================
+   Mobile Optimization
+   ===================== */
+
+/* Navbar & Logo */
+@media (max-width: 992px) {
+  #sideNav {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0.5rem 1rem;
+    z-index: 1050;
+  }
+
+  #sideNav .navbar-brand img {
+    width: 50px;
+    height: 50px;
+    margin: 0.25rem auto;
+  }
+
+  #sideNav .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.95);
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  #sideNav .nav-item {
+    margin: 0.5rem 0;
+  }
+
+  body {
+    padding-top: 80px; /* spazio sotto la navbar fissa */
+  }
+}
+
+/* Headings & Text */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .resume-section-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+  }
+}
+
+/* Gallery */
+@media (max-width: 768px) {
+  #gallery .masonry {
+    column-count: 1 !important;
+    column-gap: 0.5rem;
+  }
+
+  #gallery .masonry-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Video grid */
+@media (max-width: 768px) {
+  #videos .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Lightbox adjustments */
+@media (max-width: 768px) {
+  .lightbox .nav-zone {
+    width: 15%;
+  }
+
+  .lightbox .close-zone {
+    width: 20%;
+    height: 15%;
+  }
+
+  .lightbox img {
+    max-height: 70vh;
+    width: auto;
+  }
+}
+
+/* Improve spacing between sections */
+@media (max-width: 576px) {
+  section.resume-section {
+    padding: 3rem 0;
+  }
+
+  .container-fluid.p-0 {
+    padding-bottom: 3rem;
+  }
+
+  .social-icons a {
+    margin-right: 0.5rem;
+  }
+}
