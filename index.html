@@ -1,159 +1,222 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="ANDREFUOCO website" />
-  <title>ANDREFUOCO | Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0c0c0d" />
+
+  <!-- Primary meta -->
+  <title>ANDREFUOCO — Cantautore Alt-Rock</title>
+  <meta name="description"
+    content="Andrefuoco: cantautore ingegnere. Alt-rock italiano fra ironia, tecnologia e critica sociale. Ascolta i brani, guarda i video e iscriviti alla mailing list." />
+  <meta name="author" content="Andrea (Andrefuoco)" />
+  <link rel="canonical" href="https://andrefuoco.github.io/" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="music.musician" />
+  <meta property="og:site_name" content="Andrefuoco" />
+  <meta property="og:title" content="ANDREFUOCO — Cantautore Alt-Rock" />
+  <meta property="og:description"
+    content="Cantautore ingegnere. Alt-rock italiano fra ironia, tecnologia e critica sociale." />
+  <meta property="og:url" content="https://andrefuoco.github.io/" />
+  <meta property="og:image" content="https://andrefuoco.github.io/assets/img/andrefuoco_1.jpg" />
+  <meta property="og:locale" content="it_IT" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ANDREFUOCO — Cantautore Alt-Rock" />
+  <meta name="twitter:description"
+    content="Cantautore ingegnere. Alt-rock italiano fra ironia, tecnologia e critica sociale." />
+  <meta name="twitter:image" content="https://andrefuoco.github.io/assets/img/andrefuoco_1.jpg" />
+
+  <!-- Icons & fonts -->
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-  <link href="css/styles.css" rel="stylesheet" />
-  <link href="css/mobile.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Saira+Extra+Condensed:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
-<body id="page-top">
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top">
-      <!-- LOGO: visibile su tutti i dispositivi -->
-      <span class="d-block text-center w-100">
-        <img class="img-fluid logo-img" src="assets/img/logo_propic.png" alt="Andrefuoco Logo" />
-      </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#music">Music</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#videos">Video</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#gallery">Foto</a></li>
-        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#newsletter">Mailing List</a></li>
+<body id="top">
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#about">Salta al contenuto</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Andrefuoco — home">
+        <img src="assets/img/logo.png" alt="Andrefuoco" />
+      </a>
+
+      <nav class="nav__links" id="navLinks" aria-label="Navigazione principale">
+        <a href="#about">About</a>
+        <a href="#music">Musica</a>
+        <a href="#videos">Video</a>
+        <a href="#gallery">Foto</a>
+        <a href="#newsletter" class="nav__cta">Mailing List</a>
+      </nav>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Apri il menu"
+        aria-controls="navLinks" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__content">
+      <img class="hero__logo" src="assets/img/logo.png" alt="Andrefuoco" />
+      <p class="hero__tagline">Cantautore&nbsp;·&nbsp;Ingegnere&nbsp;·&nbsp;Alt-Rock</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#music"><i class="fa-solid fa-play"></i> Ascolta</a>
+        <a class="btn btn--ghost" href="#newsletter">Iscriviti</a>
+      </div>
+      <ul class="social" aria-label="Profili social">
+        <li><a href="https://open.spotify.com/intl-it/artist/1fBENlGR3erYzoPzqxH00x?si=ulUWe-0eTRSHCp6fqF2h6w" target="_blank" rel="noopener" aria-label="Spotify"><i class="fab fa-spotify"></i></a></li>
+        <li><a href="https://www.youtube.com/@andrefuoco" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="https://www.instagram.com/andrefuoco.2099/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.tiktok.com/@andrefuoco.2099?_t=ZN-90uBduTkj38&_r=1" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+        <li><a href="https://www.facebook.com/elettrogruppogeno/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
       </ul>
     </div>
-  </nav>
+    <a class="hero__scroll" href="#about" aria-label="Scorri verso il basso">
+      <span></span>
+    </a>
+  </section>
 
-  <!-- Page Content -->
-  <div class="container-fluid p-0">
-    
-    <!-- Bio -->
-    <section class="resume-section" id="about">
-      <div class="resume-section-content">
-        <!-- Logo al posto del titolo -->
-        <div class="text-center mb-4">
-          <img src="assets/img/logo.png" alt="Andre Fuoco Logo" class="bio-logo img-fluid">
+  <main>
+    <!-- ===================== ABOUT ===================== -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about__media">
+          <img src="assets/img/andrefuoco_1.jpg" alt="Ritratto di Andrefuoco" loading="lazy" />
         </div>
-        <!-- Foto sotto il logo -->
-        <div class="bio-photo-wrapper my-4">
-          <img src="assets/img/andrefuoco_1.jpg" alt="Andre Fuoco Portrait" class="bio-photo img-fluid">
-        </div>
-        <div class="bio-text text-start">
+        <div class="about__text">
+          <p class="eyebrow">Bio</p>
+          <h2 class="section__title">Chi è Andrefuoco</h2>
 
-          <p>Andrea, classe 1992, è un cantautore ingegnere che cerca di far lavorare insieme la parte destra e la parte sinistra del suo cervello.
-          Inizia lo studio della chitarra a 15 anni ispirato da band come Nirvana e Linkin’ Park, e grazie alla sua disinvoltura col computer inizia molto presto a registrare le sue demo che, per fortuna, in pochi hanno avuto il privilegio di ascoltare.</p>
+          <p>Andrea, classe 1992, è un cantautore ingegnere che cerca di far lavorare insieme la parte destra e la parte sinistra del suo cervello. Inizia lo studio della chitarra a 15 anni ispirato da band come Nirvana e Linkin' Park, e grazie alla sua disinvoltura col computer inizia molto presto a registrare le sue demo che, per fortuna, in pochi hanno avuto il privilegio di ascoltare.</p>
 
-          <p>Dopo la laurea e una breve pausa dalla musica necessaria per prenderla, Andrea torna a suonare la chitarra e cantare, spinto dalla scoperta di band come i Cani, Baustelle, Bluvertigo.
-          Inizia allora a scrivere le sue canzoni, piccole provocazioni che mettono in discussione il nostro rapporto con la società, la tecnologia e la natura, ma anche con cose più terrene come l’amore e le relazioni.</p>
+          <p>Dopo la laurea e una breve pausa dalla musica necessaria per prenderla, Andrea torna a suonare la chitarra e cantare, spinto dalla scoperta di band come i Cani, Baustelle, Bluvertigo. Inizia allora a scrivere le sue canzoni, piccole provocazioni che mettono in discussione il nostro rapporto con la società, la tecnologia e la natura, ma anche con cose più terrene come l'amore e le relazioni.</p>
 
-          <p>Nello scrivere pesca a due mani dal suo bagaglio tecnico-scientifico, e inserisce con disinvoltura concetti anche ostici grazie al cavallo di Troia dell’ironia e della nerdcultura, attuando così una sorta di divulgazione subliminale.</p>
+          <p>Nello scrivere pesca a due mani dal suo bagaglio tecnico-scientifico, e inserisce con disinvoltura concetti anche ostici grazie al cavallo di Troia dell'ironia e della nerdcultura, attuando così una sorta di divulgazione subliminale.</p>
 
-          <p>La sua prima incarnazione musicale è la band <strong>Elettrogruppogeno</strong>, con la quale pubblica un disco per Maninalto! Records, anticipato dal singolo <em>La Mia Ragazza è Una Nerd</em>, per il quale sviluppa un videogioco basato sulla canzone stessa.
-          Calca diversi palchi fiorentini quali Jazz Club, La Limonaia, Ultravox e apre a vari artisti fra i quali spiccano i Meganoidi, Finaz e Cecco e Cipo.
-          Vince due premi della critica all’Ivisionatici Music Festival 2022 e arriva infine a suonare sul palco del The Cage.</p>
+          <p>La sua prima incarnazione musicale è la band <strong>Elettrogruppogeno</strong>, con la quale pubblica un disco per Maninalto! Records, anticipato dal singolo <em>La Mia Ragazza è Una Nerd</em>, per il quale sviluppa un videogioco basato sulla canzone stessa. Calca diversi palchi fiorentini quali Jazz Club, La Limonaia, Ultravox e apre a vari artisti fra i quali spiccano i Meganoidi, Finaz e Cecco e Cipo. Vince due premi della critica all'Ivisionatici Music Festival 2022 e arriva infine a suonare sul palco del The Cage.</p>
 
-          <p>Conclusa l’esperienza della band, decide di intraprendere la strada solista col nome di <strong>Andrefuoco</strong> (scelto anni or sono per incutere timore agli avversari della Playstation),
-          ricercando un sound più sporco, tendente al Cantautorato Alt-Rock e dei testi più schierati e diretti,
-          ispirati soprattutto dalla critica alla società capitalista nella quale siamo immersi,
-          pur mantenendo la solita vena ironica e i suoi fidati occhiali scientifici.</p>
+          <p>Conclusa l'esperienza della band, decide di intraprendere la strada solista col nome di <strong>Andrefuoco</strong> (scelto anni or sono per incutere timore agli avversari della Playstation), ricercando un sound più sporco, tendente al Cantautorato Alt-Rock e dei testi più schierati e diretti, ispirati soprattutto dalla critica alla società capitalista nella quale siamo immersi, pur mantenendo la solita vena ironica e i suoi fidati occhiali scientifici.</p>
 
-          <p>Collabora al suo primo EP con <strong>Marco Carnesecchi</strong>, col quale produce 5 brani,
-          dove spiccano i featuring con <strong>Oratio</strong> e <strong>Le Canzoni Giuste</strong>.
-          Il primo singolo estratto dall’EP è il brano <strong>MARZIANI SIAMO NOI</strong>.</p>
-
-        </div>
-        <div class="social-icons text-center">
-          <a class="social-icon" href="https://www.instagram.com/andrefuoco.2099/"><i class="fab fa-instagram"></i></a>
-          <a class="social-icon" href="https://www.facebook.com/elettrogruppogeno/"><i class="fab fa-facebook"></i></a>
-          <a class="social-icon" href="https://www.youtube.com/@andrefuoco"><i class="fab fa-youtube"></i></a>
-          <a class="social-icon" href="https://open.spotify.com/intl-it/artist/1fBENlGR3erYzoPzqxH00x?si=ulUWe-0eTRSHCp6fqF2h6w"><i class="fab fa-spotify"></i></a>
-          <a class="social-icon" href="https://www.tiktok.com/@andrefuoco.2099?_t=ZN-90uBduTkj38&_r=1"><i class="fab fa-tiktok"></i></a>
+          <p>Collabora al suo primo EP con <strong>Marco Carnesecchi</strong>, col quale produce 5 brani, dove spiccano i featuring con <strong>Oratio</strong> e <strong>Le Canzoni Giuste</strong>. Il primo singolo estratto dall'EP è il brano <strong>MARZIANI SIAMO NOI</strong>.</p>
         </div>
       </div>
     </section>
 
-    <hr class="m-0" />
-
-    <!-- Musica -->
-    <section class="resume-section" id="music">
-      <div class="resume-section-content">
-        <h2 class="mb-5">Musica</h2>
-        <p>Ascolta i miei ultimi brani:</p>
-        <iframe data-testid="embed-iframe" style="border-radius:12px" 
-        src="https://open.spotify.com/embed/track/1lPrVduzpRIxgWVO2v4XZQ?utm_source=generator"
-        width="100%" height="352" frameBorder="0" allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-        loading="lazy"></iframe>
+    <!-- ===================== MUSIC ===================== -->
+    <section class="section section--alt" id="music">
+      <div class="container">
+        <p class="eyebrow">Ascolta</p>
+        <h2 class="section__title">Musica</h2>
+        <p class="section__lead">Gli ultimi brani, direttamente da Spotify.</p>
+        <div class="embed-card">
+          <iframe title="Spotify — Andrefuoco" style="border-radius:12px"
+            src="https://open.spotify.com/embed/track/1lPrVduzpRIxgWVO2v4XZQ?utm_source=generator"
+            width="100%" height="352" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
       </div>
     </section>
 
-    <hr class="m-0" />
-    <!-- Video -->
-    <section class="resume-section" id="videos">
-      <div class="resume-section-content">
-        <h2 class="mb-5">Video</h2>
-        <div class="row">
-          <div class="col-md-6 mb-4">
-            <div class="ratio ratio-16x9">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/SzH3wk9OIZk?si=ggwD-OCsVgAu4j1e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+    <!-- ===================== VIDEO ===================== -->
+    <section class="section" id="videos">
+      <div class="container">
+        <p class="eyebrow">Guarda</p>
+        <h2 class="section__title">Video</h2>
+        <div class="video-grid">
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/SzH3wk9OIZk?si=ggwD-OCsVgAu4j1e"
+              title="Video YouTube Andrefuoco 1" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
           </div>
-          <div class="col-md-6 mb-4">
-            <div class="ratio ratio-16x9">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/VWc9hfIPhfU?si=TxC2GhE3GEDhcchT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+          <div class="video">
+            <iframe src="https://www.youtube.com/embed/VWc9hfIPhfU?si=TxC2GhE3GEDhcchT"
+              title="Video YouTube Andrefuoco 2" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
           </div>
         </div>
       </div>
     </section>
-    <hr class="m-0" />
-    
-    <!-- Gallery -->
-    <section class="resume-section" id="gallery">
-      <div class="resume-section-content">
-        <h2 class="mb-5">Foto</h2>
+
+    <!-- ===================== GALLERY ===================== -->
+    <section class="section section--alt" id="gallery">
+      <div class="container">
+        <p class="eyebrow">Scatti</p>
+        <h2 class="section__title">Foto</h2>
         <div class="photo-grid">
-          <img src="assets/img/andrefuoco_1.jpg" alt="Foto 1" data-index="0">
-          <img src="assets/img/andrefuoco_2.jpg" alt="Foto 2" data-index="1">
-          <img src="assets/img/andrefuoco_3.jpg" alt="Foto 3" data-index="2">
-          <img src="assets/img/andrefuoco_4.jpg" alt="Foto 4" data-index="3">
+          <button type="button" class="photo" data-index="0">
+            <img src="assets/img/andrefuoco_1.jpg" alt="Andrefuoco — foto 1" loading="lazy" />
+          </button>
+          <button type="button" class="photo" data-index="1">
+            <img src="assets/img/andrefuoco_2.jpg" alt="Andrefuoco — foto 2" loading="lazy" />
+          </button>
+          <button type="button" class="photo" data-index="2">
+            <img src="assets/img/andrefuoco_3.jpg" alt="Andrefuoco — foto 3" loading="lazy" />
+          </button>
+          <button type="button" class="photo" data-index="3">
+            <img src="assets/img/andrefuoco_4.jpg" alt="Andrefuoco — foto 4" loading="lazy" />
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox">
-      <span class="close">&times;</span>
-      <span class="prev">&#10094;</span>
-      <img class="lightbox-content" id="lightbox-img">
-      <span class="next">&#10095;</span>
-    </div>
-
-    <hr class="m-0" />
-
-    <!-- Mailing List -->
-    <section class="resume-section" id="newsletter">
-      <div class="resume-section-content">
-        <h2 class="mb-5">Iscriviti</h2>
-        <p>Una mail al mese per confrontarci su come la tecnologia influenza le nostre vite, restando aggiornato sulle mie avventure contro il Capitalismo!</p>
-        <iframe width="540" height="305" src="https://e377b2da.sibforms.com/serve/MUIFAB9JHXNoq6NMcEoDTCBnZc2sduEUpqHF0B-kKdvBaLVcj4YiLnHbVrdkJbtzmz-uruyEyzvfjvuVX0chci3Wl9FW_ey1xS4hOv6Zycoqh415JmJJFOXOeNtDRKtzM2IQWEx1axNrk_OZWd9w97AHhALflwa0dWn5nPxDATUk9AtFZW1CRpXUkTs_zrY3UytNGXyv_w7Mxcg1nQ==" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+    <!-- ===================== NEWSLETTER ===================== -->
+    <section class="section" id="newsletter">
+      <div class="container container--narrow">
+        <p class="eyebrow">Resta in contatto</p>
+        <h2 class="section__title">Mailing List</h2>
+        <p class="section__lead">Una mail al mese per confrontarci su come la tecnologia influenza
+          le nostre vite, restando aggiornato sulle mie avventure contro il Capitalismo.</p>
+        <div class="embed-card embed-card--form">
+          <iframe title="Iscrizione alla mailing list" width="540" height="305"
+            src="https://e377b2da.sibforms.com/serve/MUIFAB9JHXNoq6NMcEoDTCBnZc2sduEUpqHF0B-kKdvBaLVcj4YiLnHbVrdkJbtzmz-uruyEyzvfjvuVX0chci3Wl9FW_ey1xS4hOv6Zycoqh415JmJJFOXOeNtDRKtzM2IQWEx1axNrk_OZWd9w97AHhALflwa0dWn5nPxDATUk9AtFZW1CRpXUkTs_zrY3UytNGXyv_w7Mxcg1nQ=="
+            frameborder="0" scrolling="auto" allowfullscreen loading="lazy"></iframe>
+        </div>
       </div>
     </section>
-  <!-- Bootstrap core JS-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img class="footer__logo" src="assets/img/logo.png" alt="Andrefuoco" />
+      <ul class="social social--sm" aria-label="Profili social">
+        <li><a href="https://open.spotify.com/intl-it/artist/1fBENlGR3erYzoPzqxH00x?si=ulUWe-0eTRSHCp6fqF2h6w" target="_blank" rel="noopener" aria-label="Spotify"><i class="fab fa-spotify"></i></a></li>
+        <li><a href="https://www.youtube.com/@andrefuoco" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="https://www.instagram.com/andrefuoco.2099/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.tiktok.com/@andrefuoco.2099?_t=ZN-90uBduTkj38&_r=1" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+        <li><a href="https://www.facebook.com/elettrogruppogeno/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+      </ul>
+      <p class="footer__copy">© <span id="year"></span> Andrefuoco · Tutti i diritti riservati</p>
+    </div>
+  </footer>
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Galleria foto">
+    <button class="lightbox__btn lightbox__close" aria-label="Chiudi">&times;</button>
+    <button class="lightbox__btn lightbox__prev" aria-label="Foto precedente">&#10094;</button>
+    <img class="lightbox__img" id="lightboxImg" alt="" />
+    <button class="lightbox__btn lightbox__next" aria-label="Foto successiva">&#10095;</button>
+  </div>
+
   <script src="js/scripts.js"></script>
 </body>
+
 </html>
