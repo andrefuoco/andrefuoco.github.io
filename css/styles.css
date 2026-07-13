@@ -401,6 +401,69 @@ a { color: inherit; text-decoration: none; }
 .embed-card--form { max-width: 560px; margin-inline: auto; }
 .embed-card--form iframe { margin-inline: auto; max-width: 100%; }
 
+/* ===================== RELEASES (Spotify) ===================== */
+.release-latest__label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--red-bright);
+  margin: 0 0 0.75rem;
+}
+.release-latest__label::before {
+  content: "\f069"; /* asterisk */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 0.5rem;
+  font-size: 0.85em;
+}
+
+.release-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.release {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+.release:hover {
+  transform: translateY(-4px);
+  border-color: var(--red);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+.release__cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+.release__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.75rem 0.9rem 0.9rem;
+}
+.release__name {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 1.1rem;
+  line-height: 1.15;
+}
+.release:hover .release__name { color: var(--red-bright); }
+.release__info {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
 /* Newsletter: two columns on desktop */
 .newsletter {
   display: grid;

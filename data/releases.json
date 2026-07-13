@@ -1,0 +1,29 @@
+{
+  "updated": "2026-07-12T00:00:00Z",
+  "artistId": "1fBENlGR3erYzoPzqxH00x",
+  "artistName": "ANDREFUOCO",
+  "releases": [
+    {
+      "id": "0vi2LhwKTulW2KlEoOXrBX",
+      "name": "PLANCTON",
+      "type": "single",
+      "releaseDate": "2026-07-03",
+      "totalTracks": 1,
+      "artists": "ANDREFUOCO, Oratio",
+      "url": "https://open.spotify.com/album/0vi2LhwKTulW2KlEoOXrBX",
+      "embedUrl": "https://open.spotify.com/embed/album/0vi2LhwKTulW2KlEoOXrBX",
+      "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b27314df2bfacd51c41bd5deffa2"
+    },
+    {
+      "id": "67kHDB1PYsRNwsnBmUIKI6",
+      "name": "MARZIANI SIAMO NOI",
+      "type": "single",
+      "releaseDate": "2025-05-09",
+      "totalTracks": 1,
+      "artists": "ANDREFUOCO",
+      "url": "https://open.spotify.com/album/67kHDB1PYsRNwsnBmUIKI6",
+      "embedUrl": "https://open.spotify.com/embed/album/67kHDB1PYsRNwsnBmUIKI6",
+      "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b2736c7da243583928502cdb4f62"
+    }
+  ]
+}

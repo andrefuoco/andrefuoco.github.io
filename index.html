@@ -40,6 +40,28 @@
     referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "ANDREFUOCO",
+    "alternateName": "Andrefuoco",
+    "description": "Cantautorato nerd rock contro i poteri forti. Ironia, tecnologia e critica sociale.",
+    "url": "https://andrefuoco.github.io/",
+    "image": "https://andrefuoco.github.io/assets/img/andrefuoco_1.jpg",
+    "genre": ["Indie rock", "Cantautorato", "Nerd rock"],
+    "foundingLocation": { "@type": "City", "name": "Firenze" },
+    "sameAs": [
+      "https://open.spotify.com/artist/1fBENlGR3erYzoPzqxH00x",
+      "https://www.youtube.com/@andrefuoco",
+      "https://www.instagram.com/andrefuoco.suona/",
+      "https://www.tiktok.com/@andrefuoco.2099",
+      "https://www.facebook.com/elettrogruppogeno/"
+    ]
+  }
+  </script>
 </head>
 
 <body id="top">
@@ -126,18 +148,24 @@
     </section>
 
     <!-- ===================== MUSIC ===================== -->
+    <!-- Le uscite vengono aggiornate automaticamente: la GitHub Action
+         .github/workflows/update-releases.yml rigenera data/releases.json
+         ogni giorno interrogando l'API di Spotify. Se il JSON non è
+         raggiungibile, resta l'embed dell'artista come fallback. -->
     <section class="section section--alt" id="music">
       <div class="container">
         <p class="eyebrow">Ascolta</p>
         <h2 class="section__title">Musica</h2>
-        <p class="section__lead">Gli ultimi brani, direttamente da Spotify.</p>
+        <p class="section__lead">Le ultime uscite, aggiornate automaticamente da Spotify.</p>
+        <p class="release-latest__label" id="latestLabel" hidden></p>
         <div class="embed-card">
-          <iframe title="Spotify — Andrefuoco" style="border-radius:12px"
-            src="https://open.spotify.com/embed/track/1lPrVduzpRIxgWVO2v4XZQ?utm_source=generator"
-            width="100%" height="352" frameBorder="0" allowfullscreen=""
+          <iframe id="latestEmbed" title="Spotify — Andrefuoco"
+            src="https://open.spotify.com/embed/artist/1fBENlGR3erYzoPzqxH00x?utm_source=generator"
+            width="100%" height="352" allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"></iframe>
         </div>
+        <div class="release-grid" id="releaseGrid" aria-label="Discografia"></div>
       </div>
     </section>
 
