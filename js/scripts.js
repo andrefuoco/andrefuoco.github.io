@@ -4,6 +4,123 @@
 (() => {
   "use strict";
 
+  /* ===================== ARTWORK (configurazione) =====================
+     Qui decidi cosa appare nelle sezioni "Cover Art" e "Collage".
+
+     - Per NASCONDERE una copertina: metti `visible: false` (e viceversa).
+     - Per cambiare la didascalia: modifica `title`.
+     - Per cambiare l'ordine: riordina le righe.
+     - Nuova uscita? Aggiungi una riga con il percorso del file.
+     - Nuovo collage? Aggiungi una voce a COLLAGES: le tavole vengono
+       lette in ordine di nome (1.web.jpg, 2.web.jpg, 3.web.jpg). */
+  const COVER_ART = [
+    {
+      label: "ANDREFUOCO",
+      note: "Il progetto attuale",
+      accent: true,
+      items: [
+        { title: "Marziani Siamo Noi", file: "assets/img/coverart/ANDREFUOCO/i marziani siamo noi 2.5(1).web.jpg", visible: true },
+        { title: "Plancton (feat. Oratio)", file: "assets/img/coverart/ANDREFUOCO/plancton.web.jpg", visible: true },
+      ],
+    },
+    {
+      label: "Elettrogruppogeno",
+      note: "La band precedente",
+      accent: false,
+      items: [
+        { title: "La Mia Ragazza è Una Nerd", file: "assets/img/coverart/Elettrogruppogeno/Cover-LOGO-1400x1400.png", visible: true },
+        { title: "Tutti Rockstar", file: "assets/img/coverart/Elettrogruppogeno/Tutti Rockstar_1400x1400.png", visible: true },
+        { title: "Metacanzone", file: "assets/img/coverart/Elettrogruppogeno/metacanzone1400x1400.png", visible: true },
+        { title: "Instadiva", file: "assets/img/coverart/Elettrogruppogeno/instadiva1400x1400.png", visible: true },
+        { title: "Genetica", file: "assets/img/coverart/Elettrogruppogeno/Genetica_1400x1400.png", visible: true },
+        { title: "Buco Nero Supermassivo", file: "assets/img/coverart/Elettrogruppogeno/buconerosupermassivo_1400x1400.png", visible: true },
+        { title: "Mekkaniko", file: "assets/img/coverart/Elettrogruppogeno/COVER_MEKKANIKO_1400x1400.png", visible: true },
+        { title: "Masciugo Allumido", file: "assets/img/coverart/Elettrogruppogeno/masciugo allumido_1400x1400.png", visible: true },
+        { title: "Sudococa", file: "assets/img/coverart/Elettrogruppogeno/sudococaCompressed_1400x1400.png", visible: true },
+        { title: "Sudococa (Prophectical Remix)", file: "assets/img/coverart/Elettrogruppogeno/Sudococa Remix 1400x1400.png", visible: true },
+      ],
+    },
+  ];
+
+  const COLLAGES = [
+    { release: "Marziani Siamo Noi", dir: "assets/img/collage/MARZIANI", panels: 3 },
+    { release: "Plancton", dir: "assets/img/collage/PLANCTON", panels: 3 },
+  ];
+
+  /* ===================== ARTWORK (rendering) ===================== */
+  function artTile(file, title, group) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "photo photo--art";
+    btn.dataset.lbGroup = group;
+
+    const img = document.createElement("img");
+    img.src = file;
+    img.alt = title;
+    img.loading = "lazy";
+
+    btn.appendChild(img);
+    return btn;
+  }
+
+  function artGroup(label, note, accent) {
+    const wrap = document.createElement("div");
+    wrap.className = "art-group" + (accent ? " art-group--accent" : "");
+
+    const head = document.createElement("div");
+    head.className = "art-group__head";
+
+    const h3 = document.createElement("h3");
+    h3.className = "art-group__label";
+    h3.textContent = label;
+    head.appendChild(h3);
+
+    if (note) {
+      const p = document.createElement("p");
+      p.className = "art-group__note";
+      p.textContent = note;
+      head.appendChild(p);
+    }
+
+    wrap.appendChild(head);
+    return wrap;
+  }
+
+  function initCoverArt() {
+    const mount = document.getElementById("coverartGroups");
+    if (!mount) return;
+
+    COVER_ART.forEach((project, idx) => {
+      const items = project.items.filter((i) => i.visible !== false);
+      if (!items.length) return;
+
+      const group = artGroup(project.label, project.note, project.accent);
+      const grid = document.createElement("div");
+      grid.className = "photo-grid photo-grid--covers";
+      items.forEach((item) => grid.appendChild(artTile(item.file, item.title, `covers-${idx}`)));
+      group.appendChild(grid);
+      mount.appendChild(group);
+    });
+  }
+
+  function initCollages() {
+    const mount = document.getElementById("collageGroups");
+    if (!mount) return;
+
+    COLLAGES.forEach((collage, idx) => {
+      const group = artGroup(collage.release, null, true);
+      const grid = document.createElement("div");
+      grid.className = "collage-grid";
+      for (let n = 1; n <= collage.panels; n++) {
+        grid.appendChild(
+          artTile(`${collage.dir}/${n}.web.jpg`, `${collage.release} — tavola ${n}`, `collage-${idx}`)
+        );
+      }
+      group.appendChild(grid);
+      mount.appendChild(group);
+    });
+  }
+
   /* ===================== NAV ===================== */
   function initNav() {
     const nav = document.getElementById("nav");
@@ -137,24 +254,32 @@
     if (year) year.textContent = new Date().getFullYear();
   }
 
-  /* ===================== LIGHTBOX GALLERY ===================== */
+  /* ===================== LIGHTBOX =====================
+     Qualsiasi bottone con data-lb-group apre il visualizzatore;
+     frecce e tastiera navigano solo dentro il gruppo cliccato
+     (foto, copertine di un progetto, tavole di un collage). */
   function initLightbox() {
-    const photos = [...document.querySelectorAll(".photo")];
     const lightbox = document.getElementById("lightbox");
-    if (!lightbox || !photos.length) return;
+    if (!lightbox) return;
 
     const lightboxImg = document.getElementById("lightboxImg");
+    const caption = document.getElementById("lightboxCaption");
     const closeBtn = lightbox.querySelector(".lightbox__close");
     const nextBtn = lightbox.querySelector(".lightbox__next");
     const prevBtn = lightbox.querySelector(".lightbox__prev");
-    const sources = photos.map((p) => p.querySelector("img"));
+    let group = [];
     let current = 0;
     let lastFocused = null;
 
     const render = () => {
-      const img = sources[current];
+      const img = group[current];
+      if (!img) return;
       lightboxImg.src = img.src;
       lightboxImg.alt = img.alt || "";
+      if (caption) {
+        const counter = group.length > 1 ? ` · ${current + 1} / ${group.length}` : "";
+        caption.textContent = (img.alt || "") + counter;
+      }
     };
 
     const open = (index) => {
@@ -175,11 +300,20 @@
     };
 
     const move = (dir) => {
-      current = (current + dir + sources.length) % sources.length;
+      current = (current + dir + group.length) % group.length;
       render();
     };
 
-    photos.forEach((photo, i) => photo.addEventListener("click", () => open(i)));
+    /* Delegato: funziona anche per le tile generate da JS */
+    document.addEventListener("click", (e) => {
+      const trigger = e.target.closest("[data-lb-group]");
+      if (!trigger) return;
+      const name = trigger.dataset.lbGroup;
+      const triggers = [...document.querySelectorAll(`[data-lb-group="${CSS.escape(name)}"]`)];
+      group = triggers.map((t) => t.querySelector("img")).filter(Boolean);
+      open(Math.max(0, triggers.indexOf(trigger)));
+    });
+
     closeBtn.addEventListener("click", close);
     nextBtn.addEventListener("click", () => move(1));
     prevBtn.addEventListener("click", () => move(-1));
@@ -200,6 +334,8 @@
   document.addEventListener("DOMContentLoaded", () => {
     initNav();
     initReleases();
+    initCoverArt();
+    initCollages();
     initFooterYear();
     initLightbox();
   });
