@@ -16,7 +16,7 @@
   const COVER_ART = [
     {
       label: "ANDREFUOCO",
-      note: "Il progetto attuale",
+      note: "",
       accent: true,
       items: [
         { title: "Marziani Siamo Noi", file: "assets/img/coverart/ANDREFUOCO/i marziani siamo noi 2.5(1).web.jpg", visible: true },
@@ -25,19 +25,19 @@
     },
     {
       label: "Elettrogruppogeno",
-      note: "La band precedente",
+      note: "La prima band di ANDREFUOCO",
       accent: false,
       items: [
-        { title: "La Mia Ragazza è Una Nerd", file: "assets/img/coverart/Elettrogruppogeno/Cover-LOGO-1400x1400.png", visible: true },
-        { title: "Tutti Rockstar", file: "assets/img/coverart/Elettrogruppogeno/Tutti Rockstar_1400x1400.png", visible: true },
-        { title: "Metacanzone", file: "assets/img/coverart/Elettrogruppogeno/metacanzone1400x1400.png", visible: true },
-        { title: "Instadiva", file: "assets/img/coverart/Elettrogruppogeno/instadiva1400x1400.png", visible: true },
-        { title: "Genetica", file: "assets/img/coverart/Elettrogruppogeno/Genetica_1400x1400.png", visible: true },
         { title: "Buco Nero Supermassivo", file: "assets/img/coverart/Elettrogruppogeno/buconerosupermassivo_1400x1400.png", visible: true },
-        { title: "Mekkaniko", file: "assets/img/coverart/Elettrogruppogeno/COVER_MEKKANIKO_1400x1400.png", visible: true },
-        { title: "Masciugo Allumido", file: "assets/img/coverart/Elettrogruppogeno/masciugo allumido_1400x1400.png", visible: true },
-        { title: "Sudococa", file: "assets/img/coverart/Elettrogruppogeno/sudococaCompressed_1400x1400.png", visible: true },
-        { title: "Sudococa (Prophectical Remix)", file: "assets/img/coverart/Elettrogruppogeno/Sudococa Remix 1400x1400.png", visible: true },
+        { title: "Tutti Rockstar", file: "assets/img/coverart/Elettrogruppogeno/Tutti Rockstar_1400x1400.png", visible: true },
+        { title: "Genetica", file: "assets/img/coverart/Elettrogruppogeno/Genetica_1400x1400.png", visible: true },
+        { title: "Metacanzone", file: "assets/img/coverart/Elettrogruppogeno/metacanzone1400x1400.png", visible: true },
+        { title: "Masciugo Allumido", file: "assets/img/coverart/Elettrogruppogeno/masciugo allumido_1400x1400.png", visible: false },
+        { title: "Instadiva", file: "assets/img/coverart/Elettrogruppogeno/instadiva1400x1400.png", visible: true },
+        { title: "La Mia Ragazza è Una Nerd", file: "assets/img/coverart/Elettrogruppogeno/Cover-LOGO-1400x1400.png", visible: true },
+        { title: "Mekkaniko", file: "assets/img/coverart/Elettrogruppogeno/COVER_MEKKANIKO_1400x1400.png", visible: false },
+        { title: "Sudococa", file: "assets/img/coverart/Elettrogruppogeno/sudococaCompressed_1400x1400.png", visible: false },
+        { title: "Sudococa (Prophectical Remix)", file: "assets/img/coverart/Elettrogruppogeno/Sudococa Remix 1400x1400.png", visible: false },
       ],
     },
   ];
