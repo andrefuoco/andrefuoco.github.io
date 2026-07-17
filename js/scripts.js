@@ -5,7 +5,7 @@
   "use strict";
 
   /* ===================== ARTWORK (configurazione) =====================
-     Qui decidi cosa appare nelle sezioni "Cover Art" e "Collage".
+     Qui decidi cosa appare nelle sezioni "Cover Art" e "Immagini e Parole".
 
      - Per NASCONDERE una copertina: metti `visible: false` (e viceversa).
      - Per cambiare la didascalia: modifica `title`.

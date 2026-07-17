@@ -78,10 +78,10 @@
       <nav class="nav__links" id="navLinks" aria-label="Navigazione principale">
         <a href="#about">About</a>
         <a href="#music">Musica</a>
-        <a href="#coverart">Cover Art</a>
         <a href="#videos">Video</a>
+        <a href="#collage">Immagini e Parole</a>
+        <a href="#coverart">Cover Art</a>
         <a href="#gallery">Foto</a>
-        <a href="#collage">Collage</a>
         <a href="#newsletter" class="nav__cta">Mailing List</a>
       </nav>
 
@@ -171,20 +171,8 @@
       </div>
     </section>
 
-    <!-- ===================== COVER ART =====================
-         Le copertine visibili si scelgono in js/scripts.js:
-         nella lista COVER_ART basta impostare visible: true/false. -->
-    <section class="section" id="coverart">
-      <div class="container">
-        <p class="eyebrow">Artwork</p>
-        <h2 class="section__title">Cover Art</h2>
-        <p class="section__lead">Le copertine dei brani — clicca per esplorarle da vicino.</p>
-        <div id="coverartGroups"></div>
-      </div>
-    </section>
-
     <!-- ===================== VIDEO ===================== -->
-    <section class="section section--alt" id="videos">
+    <section class="section" id="videos">
       <div class="container">
         <p class="eyebrow">Guarda</p>
         <h2 class="section__title">Video</h2>
@@ -202,8 +190,32 @@
       </div>
     </section>
 
+    <!-- ===================== IMMAGINI E PAROLE (collage) =====================
+         I gruppi (3 tavole per uscita) si definiscono in js/scripts.js,
+         lista COLLAGES: le tavole vengono lette in ordine di nome (1, 2, 3). -->
+    <section class="section section--alt" id="collage">
+      <div class="container">
+        <p class="eyebrow">Collage</p>
+        <h2 class="section__title">Immagini e Parole</h2>
+        <p class="section__lead">Tre tavole per ogni uscita: collage e versi dai brani.</p>
+        <div id="collageGroups"></div>
+      </div>
+    </section>
+
+    <!-- ===================== COVER ART =====================
+         Le copertine visibili si scelgono in js/scripts.js:
+         nella lista COVER_ART basta impostare visible: true/false. -->
+    <section class="section" id="coverart">
+      <div class="container">
+        <p class="eyebrow">Artwork</p>
+        <h2 class="section__title">Cover Art</h2>
+        <p class="section__lead">Le copertine dei brani — clicca per esplorarle da vicino.</p>
+        <div id="coverartGroups"></div>
+      </div>
+    </section>
+
     <!-- ===================== GALLERY ===================== -->
-    <section class="section" id="gallery">
+    <section class="section section--alt" id="gallery">
       <div class="container">
         <p class="eyebrow">Scatti</p>
         <h2 class="section__title">Foto</h2>
@@ -221,18 +233,6 @@
             <img src="assets/img/andrefuoco_4.jpg" alt="Andrefuoco — foto 4" loading="lazy" />
           </button>
         </div>
-      </div>
-    </section>
-
-    <!-- ===================== COLLAGE =====================
-         I gruppi (3 tavole per uscita) si definiscono in js/scripts.js,
-         lista COLLAGES: le tavole vengono lette in ordine di nome (1, 2, 3). -->
-    <section class="section section--alt" id="collage">
-      <div class="container">
-        <p class="eyebrow">Testi in immagini</p>
-        <h2 class="section__title">Collage</h2>
-        <p class="section__lead">Tre tavole per ogni uscita: collage e versi dai brani.</p>
-        <div id="collageGroups"></div>
       </div>
     </section>
 
