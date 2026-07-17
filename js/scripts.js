@@ -47,6 +47,21 @@
     { release: "Plancton", dir: "assets/img/collage/PLANCTON", panels: 3 },
   ];
 
+  /* Uscite extra da mostrare nella griglia della sezione Musica, oltre a
+     quelle ANDREFUOCO caricate da data/releases.json. La griglia viene
+     ordinata per data (dalla più recente): l'album Elettrogruppogeno del
+     2023 compare quindi in fondo, come prima uscita in assoluto. */
+  const EXTRA_RELEASES = [
+    {
+      name: "Elettrogruppogeno",
+      type: "album",
+      artist: "Elettrogruppogeno",
+      releaseDate: "2023-01-20",
+      url: "https://open.spotify.com/album/3AndoloaOOtyNY15dVTza7",
+      image: "https://i.scdn.co/image/ab67616d0000b273e56f182a6655f3603893c8b0",
+    },
+  ];
+
   /* ===================== ARTWORK (rendering) ===================== */
   function artTile(file, title, group) {
     const btn = document.createElement("button");
@@ -208,7 +223,7 @@
     info.className = "release__info";
     const type = RELEASE_TYPE_LABELS[release.type] || release.type;
     const year = (release.releaseDate || "").slice(0, 4);
-    info.textContent = year ? `${type} · ${year}` : type;
+    info.textContent = [type, year, release.artist].filter(Boolean).join(" · ");
 
     meta.append(name, info);
     card.append(cover, meta);
@@ -221,21 +236,19 @@
     const label = document.getElementById("latestLabel");
     if (!grid || !embed) return;
 
-    let data;
+    let releases = [];
     try {
       const res = await fetch("data/releases.json", { cache: "no-cache" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      data = await res.json();
+      const data = await res.json();
+      if (Array.isArray(data.releases)) releases = data.releases;
     } catch {
-      return; // keep the artist embed fallback
+      /* keep the artist embed fallback; the grid still shows EXTRA_RELEASES */
     }
 
-    const releases = Array.isArray(data.releases) ? data.releases : [];
-    if (!releases.length) return;
-
-    /* Newest release becomes the main player */
+    /* Newest ANDREFUOCO release becomes the main player */
     const latest = releases[0];
-    if (latest.embedUrl) {
+    if (latest && latest.embedUrl) {
       embed.src = `${latest.embedUrl}?utm_source=generator`;
       embed.title = `Spotify — ${latest.name}`;
       if (label) {
@@ -244,8 +257,10 @@
       }
     }
 
-    /* Full discography grid */
-    releases.forEach((release) => grid.appendChild(releaseCard(release)));
+    /* Full discography grid: Spotify + uscite extra, dalla più recente */
+    [...releases, ...EXTRA_RELEASES]
+      .sort((a, b) => (b.releaseDate || "").localeCompare(a.releaseDate || ""))
+      .forEach((release) => grid.appendChild(releaseCard(release)));
   }
 
   /* ===================== FOOTER YEAR ===================== */
