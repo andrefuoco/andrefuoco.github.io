@@ -582,21 +582,84 @@ a { color: inherit; text-decoration: none; }
 /* ===================== VIDEOGAME ===================== */
 .videogame { text-align: center; }
 .videogame .section__lead { margin-inline: auto; }
-.videogame__frame {
+/* Il gioco ha dimensioni fisse (1024x788 incluso il bordo itch): lo stage
+   mantiene le proporzioni e scala il contenuto invece di ritagliarlo. */
+.videogame__stage {
+  position: relative;
   width: 100%;
   max-width: 1024px;
   aspect-ratio: 1024 / 788;
   margin: 0 auto 2rem;
   border-radius: var(--radius);
   overflow: hidden;
-  background: #000;
+  background: #08080a;
   border: 1px solid var(--border);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
-.videogame__frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.videogame__game {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1024px;
+  height: 788px;
+  border: 0;
+  transform: scale(var(--game-scale, 1));
+  transform-origin: top left;
+}
+
+/* Anteprima cliccabile: il gioco parte solo quando lo chiedi tu */
+.videogame__poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.42) saturate(0.85);
+}
+.videogame__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+}
+.videogame__play-icon {
+  display: grid;
+  place-items: center;
+  width: clamp(4rem, 9vw, 5.5rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--red);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  padding-left: 0.15em; /* ottico: la freccia play */
+  box-shadow: 0 10px 40px var(--red-glow);
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+.videogame__play-label {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+}
+.videogame__play-note { color: var(--muted); font-size: 0.9rem; }
+.videogame__play:hover .videogame__play-icon,
+.videogame__play:focus-visible .videogame__play-icon {
+  transform: scale(1.08);
+  background: var(--red-bright);
+}
+
 @media (max-width: 620px) {
   /* Platform da tastiera: sul telefono resta solo il bottone verso itch.io */
-  .videogame__frame { display: none; }
+  .videogame__stage { display: none; }
 }
 
 /* Collage: trittico 4:5, sempre affiancato */

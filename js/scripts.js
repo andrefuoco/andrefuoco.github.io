@@ -263,6 +263,37 @@
       .forEach((release) => grid.appendChild(releaseCard(release)));
   }
 
+  /* ===================== VIDEOGAME =====================
+     Il gioco itch.io viene caricato solo dopo il click su play (niente
+     iframe — e niente audio/CPU — all'apertura della pagina). Ha una
+     risoluzione fissa, quindi lo scaliamo per riempire lo stage. */
+  const GAME_EMBED = "https://itch.io/embed-upload/5102912?color=fc0000";
+  const GAME_WIDTH = 1024;
+
+  function initVideogame() {
+    const stage = document.getElementById("gameStage");
+    const playBtn = document.getElementById("gamePlay");
+    if (!stage || !playBtn) return;
+
+    const fit = () => {
+      const scale = Math.min(1, stage.clientWidth / GAME_WIDTH);
+      if (scale > 0) stage.style.setProperty("--game-scale", scale);
+    };
+    fit();
+    window.addEventListener("resize", fit, { passive: true });
+
+    playBtn.addEventListener("click", () => {
+      const game = document.createElement("iframe");
+      game.className = "videogame__game";
+      game.src = GAME_EMBED;
+      game.title = "La Mia Ragazza è Una Nerd — gioco";
+      game.allowFullscreen = true;
+      fit();
+      stage.replaceChildren(game);
+      game.focus();
+    });
+  }
+
   /* ===================== FOOTER YEAR ===================== */
   function initFooterYear() {
     const year = document.getElementById("year");
@@ -351,6 +382,7 @@
     initReleases();
     initCoverArt();
     initCollages();
+    initVideogame();
     initFooterYear();
     initLightbox();
   });

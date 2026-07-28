@@ -221,13 +221,16 @@
         <p class="eyebrow">Gioca</p>
         <h2 class="section__title">Videogame</h2>
         <p class="section__lead">Il videogioco ispirato a <em>La Mia Ragazza è Una Nerd</em>,
-          sviluppato per il singolo di Elettrogruppogeno. Gratis, direttamente nel browser —
-          premi <strong>Run game</strong> e usa la tastiera.</p>
-        <div class="videogame__frame">
-          <iframe title="La Mia Ragazza è Una Nerd — gioca nel browser"
-            src="https://itch.io/embed-upload/5102912?color=fc0000"
-            allowfullscreen frameborder="0" loading="lazy"><a
-              href="https://zilpio-gaming.itch.io/la-mia-ragazza-una-nerd">Gioca a La Mia Ragazza è Una Nerd su itch.io</a></iframe>
+          sviluppato per il singolo di Elettrogruppogeno. Gratis, direttamente nel browser:
+          premi play e gioca con la tastiera.</p>
+        <div class="videogame__stage" id="gameStage">
+          <img class="videogame__poster" src="assets/img/coverart/Elettrogruppogeno/Cover-LOGO-1400x1400.png"
+            alt="" aria-hidden="true" loading="lazy" />
+          <button type="button" class="videogame__play" id="gamePlay">
+            <span class="videogame__play-icon"><i class="fa-solid fa-play"></i></span>
+            <span class="videogame__play-label">Avvia il gioco</span>
+            <span class="videogame__play-note">Si carica qui — serve la tastiera</span>
+          </button>
         </div>
         <a class="btn btn--primary" href="https://zilpio-gaming.itch.io/la-mia-ragazza-una-nerd"
           target="_blank" rel="noopener"><i class="fa-solid fa-gamepad"></i> Gioca su itch.io</a>
